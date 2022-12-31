@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+*{
+
+        margin: 10; 
+        padding: 10;
+        box-sizing: border-box;
+        background-color: green; 
+        font-family: sans-serif; 
+        outline: none;
+}
+
+.container{
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+}
+
+.Calculator{
+        background-color: orange;
+        padding: 20px;
+        border-radius: 30px;
+        box-shadow: inset 5px 5px 12px , 
+                    5px 5px 12px rgba(0,0,0,.16);
+        display: grid;
+        grid-template-columns: repeat (5, 68px);
+}
+
+input{
+        grid-column: span 5;
+        height: 100px;
+        width: 300px;
+        background-color:#ffffff;
+        box-shadow: inset -5px -5px 12px #ffffff
+                    inset 5px 5px 12px rgba(0,0,0,.16);
+        border: none;
+        border-radius: 30px;
+        color: rgba(70, 70, 70);
+        font-size: 50px;
+        text-align: end; margin: auto;
+        margin-top: 40px;
+        margin-bottom: 30px;
+        padding: 20px;
+}
+
+button{
+        height: 48px;
+        width: 48px;
+        background-color: #ecf0f3;
+        box-shadow: -5px 5px 12px blue, 
+                    5px 5px 12px rgba(0,0,0,.16);
+        border: none;
+        border-radius: 10px;
+        margin: 8px;
+}
+</style>
+
+</head>
+<body >
+<div class="container">
+    <div class="calculator">
+        <input type="text" placeholder="0" id="outputscreen">
+        <button onclick="display("(")> ( </button>
+        <button onclick="display(")")> ) </button>
+        <button onclick="ans("ans")> ans </button>
+        <button onclick="del()">del</button>
+        <button onclick="Clear()">clear</button>
+        
+        <button onclick="display('7')">7</button> 
+        <button onclick="display('8')">8</button>
+        <button onclick="display('9')">9</button>
+        <button onclick="display("%")">%</button>
+        <button onclick="display("√ ")">√ </button>
+
+        <button onclick="display('4")">4</button>
+        <button onclick="display( 5 )">5</button>
+        <button onclick="display('6")">6</button>
+        <button onclick="display("×")">×</button> 
+        <button onclick="display("÷")">÷</button> 
+ 
+        <button onclick="display('1')">1</button>
+        <button onclick="display('2")">2</button>
+        <button onclick="display('3')">3</button> 
+        <button onclick="display("+")">+</button>
+        <button onclick="display("-")">-</button>
+
+        <button onclick="display(".")">.</button>
+        <button onclick="display('0')">0</button>
+        <button onclick="display("")">=</button>
+        <button onclick="Calculate()"class="equal">ENTER</button>
+    </div>
+        
+</div>
+<script>
+  Let outputscreen = document .getElementById("outputscreen") 
+  function display    (num){outputscreen.value + num
+    }
+  function Calculate(){
+  try{
+    outputscreen.value = eval
+    (outputscreen.value);
+  }
+  catch(err)
+  {
+    alert("Invalid")
+  }
+  }
+  function clear(){
+    outputscreen.value="";
+  }
+  function del(){
+    outputscreen.value = outputscreen.value
+    .slice(0,-1)
+  }
+</script>
+</body>
+</html>
